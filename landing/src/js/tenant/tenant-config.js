@@ -21,6 +21,10 @@
  * @property {string} [chatScriptUrl] URL opcional de script de widget de chat (terceros).
  * @property {{ brand?: boolean, language?: boolean, exit?: boolean, chatShortcut?: boolean }} [cleanModeHeader] Cabecera modo limpio: qué bloques mostrar (atajo chat requiere `features.chat`).
  * @property {string[]} [hostnames] Hostnames que resuelven a este tenant.
+ * @property {string} [metaDescription] Descripción SEO por defecto (si no hay `metaDescriptionByLocale` para el idioma).
+ * @property {Partial<Record<'es' | 'en', string>>} [metaDescriptionByLocale] Descripción SEO por idioma.
+ * @property {{ clarity?: boolean }} [observability] Telemetría opcional; `clarity: false` desactiva Microsoft Clarity aunque exista `VITE_CLARITY_PROJECT_ID`.
+ * @property {{ canonicalBase?: string, ogImage?: string }} [seo] `canonicalBase` URL absoluta sin path para construir canonical/OG; `ogImage` opcional para `og:image`.
  */
 
 export {};

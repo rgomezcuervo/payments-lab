@@ -22,5 +22,8 @@
     "tailwindcss": "^4.1.0",
     "vite": "^6.0.0",
     "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "@datadog/browser-rum": "^6.32.0"
   }
 }

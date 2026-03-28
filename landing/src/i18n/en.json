@@ -4,7 +4,8 @@
     "langChanged": "Language changed to English"
   },
   "meta": {
-    "defaultTitle": "Collections platform"
+    "defaultTitle": "Collections platform",
+    "description": "Collections and payments with a clear, human experience: enable payments, refer merchants, and centralize operations with confidence."
   },
   "nav": {
     "ariaMain": "Main",

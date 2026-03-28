@@ -4,7 +4,8 @@
     "langChanged": "Idioma cambiado a español"
   },
   "meta": {
-    "defaultTitle": "Plataforma de recaudos"
+    "defaultTitle": "Plataforma de recaudos",
+    "description": "Recaudos y cobros con una experiencia clara y cercana: activa pagos, refiere comercios y centraliza tus operaciones con confianza."
   },
   "nav": {
     "ariaMain": "Principal",

@@ -28,5 +28,8 @@
     "exit": true,
     "chatShortcut": true
   },
-  "hostnames": ["comercio-norte.local"]
+  "hostnames": ["comercio-norte.local"],
+  "observability": {
+    "clarity": true
+  }
 }

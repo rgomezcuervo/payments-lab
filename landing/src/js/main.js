@@ -24,6 +24,7 @@ import { initBanners } from './features/banners.js';
 import { initChatWidget } from './features/chat-widget.js';
 import { initCleanMode, syncCleanModeToggle } from './features/clean-mode.js';
 import { initContactForm } from './forms/contact-form.js';
+import { initObservability } from './observability/index.js';
 
 const SECTIONS = [
   heroHtml,
@@ -88,6 +89,17 @@ export async function mountLanding() {
 
   applyI18nToDom(document, i18n.getLocale());
   applyTenantBranding(document, config, { locale: i18n.getLocale(), t: i18n.t });
+
+  initObservability({
+    document,
+    tenantConfig: config,
+    getLocale: () => i18n.getLocale(),
+    t: i18n.t,
+    subscribeLocale: (fn) => i18n.subscribe(fn),
+    location:
+      typeof globalThis !== 'undefined' && globalThis.location ? globalThis.location : /** @type {Location} */ ({ href: '', origin: '', pathname: '/', search: '', hash: '' }),
+    env: import.meta.env,
+  });
 
   initNav(header, { t: i18n.t });
   initScrollAnimations(document);
