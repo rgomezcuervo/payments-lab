@@ -51,6 +51,8 @@ isProject: false
 | Atributos o hooks para logo, hero, colores (p. ej. variables CSS o `data-brand`) | Fase 3 aplica `apply-branding` sin reescribir maquetación |
 | Contenido repetible desde CMS: IDs o contenedores vacíos rellenados por `ContentProvider` | Fase 3 inyecta datos sin duplicar secciones por tenant |
 
+Para cada fase en la cual se genere código, garantizar que los archivos tienes test, cumplen la covertura y se corre el comando relacionado a validar el coverage.
+
 ---
 
 ## Fase 1 — Cimentación del proyecto y build
