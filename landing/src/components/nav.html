@@ -1,0 +1,40 @@
+<nav
+  class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-md"
+  aria-label="Principal"
+  data-brand-surface
+>
+  <div class="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <a href="#hero" class="flex items-center gap-2 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brand-primary)]" data-brand-logo>
+      <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-teal-600 to-emerald-600 text-sm font-bold text-white shadow-sm" aria-hidden="true" data-brand-logo-mark>MC</span>
+      <span class="text-lg font-semibold tracking-tight text-slate-900" data-brand-name data-i18n-key="nav.brand">Mi Compañía</span>
+    </a>
+    <button
+      type="button"
+      class="inline-flex items-center justify-center rounded-lg border border-slate-200 p-2 text-slate-700 hover:bg-slate-50 md:hidden"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="site-nav-panel"
+      aria-label="Abrir menú"
+    >
+      <span class="sr-only" data-i18n-key="nav.openMenu">Abrir menú</span>
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <div
+      id="site-nav-panel"
+      class="absolute left-0 right-0 top-full z-50 flex flex-col gap-1 border-b border-slate-200 bg-white px-4 py-4 shadow-lg max-md:hidden md:static md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+      data-nav-panel
+    >
+      <a class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="#servicios" data-i18n-key="nav.services">Servicios</a>
+      <a class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="#beneficios" data-i18n-key="nav.benefits">Beneficios</a>
+      <a class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="#testimonios" data-i18n-key="nav.testimonials">Testimonios</a>
+      <a class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="#faq" data-i18n-key="nav.faq">FAQ</a>
+      <a
+        class="mt-2 inline-flex items-center justify-center rounded-full bg-brand-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-primary-hover md:mt-0"
+        href="#contacto"
+        data-i18n-key="nav.ctaPay"
+      >Pagar</a>
+    </div>
+  </div>
+</nav>

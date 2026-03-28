@@ -1,0 +1,58 @@
+<section id="banners" class="scroll-mt-20 border-y border-amber-100/80 bg-gradient-to-r from-amber-50 via-white to-teal-50 py-10" aria-labelledby="banners-heading" data-cms-section="banners">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+      <div>
+        <h2 id="banners-heading" class="text-2xl font-semibold tracking-tight text-slate-900" data-i18n-key="banners.title">Promociones y avisos</h2>
+        <p class="mt-1 text-slate-600" data-i18n-key="banners.lead">Novedades para ti y para tus comercios aliados.</p>
+      </div>
+      <div class="flex gap-2" data-carousel-controls="banners">
+        <button
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-800 shadow-sm hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+          data-carousel-prev
+          aria-controls="banner-carousel-slides"
+          aria-label="Anterior"
+        >
+          <span class="sr-only" data-i18n-key="banners.prev">Anterior</span>
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd"/></svg>
+        </button>
+        <button
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-800 shadow-sm hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+          data-carousel-next
+          aria-controls="banner-carousel-slides"
+          aria-label="Siguiente"
+        >
+          <span class="sr-only" data-i18n-key="banners.next">Siguiente</span>
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="cms-banners" class="mt-8" data-cms-slot="banner-list">
+      <div
+        class="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/80 shadow-sm backdrop-blur"
+        data-carousel="banners"
+        aria-roledescription="carrusel"
+      >
+        <div id="banner-carousel-slides" class="flex transition-transform duration-500 ease-out will-change-transform" data-carousel-track style="transform: translateX(0)">
+          <article class="min-w-full px-6 py-8 sm:px-10" data-carousel-slide data-reveal>
+            <p class="text-sm font-medium text-teal-700" data-i18n-key="banners.slide1.tag">Para comercios</p>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900" data-i18n-key="banners.slide1.title">Menos fricción en cada cobro</h3>
+            <p class="mt-2 max-w-2xl text-slate-600" data-i18n-key="banners.slide1.body">Activa flujos guiados y reduce abandonos con mensajes claros en el checkout.</p>
+          </article>
+          <article class="min-w-full px-6 py-8 sm:px-10" data-carousel-slide>
+            <p class="text-sm font-medium text-amber-800" data-i18n-key="banners.slide2.tag">Aliados</p>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900" data-i18n-key="banners.slide2.title">Programa de referidos</h3>
+            <p class="mt-2 max-w-2xl text-slate-600" data-i18n-key="banners.slide2.body">Recomienda la plataforma y haz crecer la red con incentivos alineados a tu región.</p>
+          </article>
+          <article class="min-w-full px-6 py-8 sm:px-10" data-carousel-slide>
+            <p class="text-sm font-medium text-emerald-800" data-i18n-key="banners.slide3.tag">Novedad</p>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900" data-i18n-key="banners.slide3.title">Panel unificado</h3>
+            <p class="mt-2 max-w-2xl text-slate-600" data-i18n-key="banners.slide3.body">Visualiza recaudos, conciliaciones y alertas en un solo lugar.</p>
+          </article>
+        </div>
+        <div class="flex justify-center gap-2 pb-6" data-carousel-dots></div>
+      </div>
+    </div>
+  </div>
+</section>

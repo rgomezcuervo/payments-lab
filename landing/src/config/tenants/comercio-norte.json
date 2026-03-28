@@ -1,0 +1,22 @@
+{
+  "id": "comercio-norte",
+  "commercialName": "Comercio Norte",
+  "pageTitle": "Cobros y recaudos | Comercio Norte",
+  "logo": {
+    "initials": "CN"
+  },
+  "colors": {
+    "primary": "#2563eb",
+    "primaryHover": "#1d4ed8",
+    "accent": "#7c3aed",
+    "surface": "#f8fafc",
+    "ink": "#0f172a"
+  },
+  "footerCopyright": "© Comercio Norte. Todos los derechos reservados.",
+  "features": {
+    "banners": true,
+    "chat": true,
+    "cleanMode": false
+  },
+  "hostnames": ["comercio-norte.local"]
+}

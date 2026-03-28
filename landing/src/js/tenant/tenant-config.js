@@ -1,0 +1,23 @@
+/**
+ * Configuración declarativa por tenant (marca blanca).
+ *
+ * @typedef {object} TenantConfig
+ * @property {string} id Identificador estable (coincide con nombre lógico del tenant).
+ * @property {string} commercialName Nombre comercial mostrado en cabecera y pie.
+ * @property {string} pageTitle Título del documento.
+ * @property {{ initials: string }} logo Marca por iniciales en el mark del logo.
+ * @property {object} colors Paleta mapeada a variables CSS `--brand-*`.
+ * @property {string} colors.primary
+ * @property {string} colors.primaryHover
+ * @property {string} colors.accent
+ * @property {string} colors.surface
+ * @property {string} colors.ink
+ * @property {string} [footerCopyright] Línea de copyright en pie.
+ * @property {object} features Flags para banners, chat, modo limpio (Fase 5+).
+ * @property {boolean} features.banners
+ * @property {boolean} features.chat
+ * @property {boolean} features.cleanMode
+ * @property {string[]} [hostnames] Hostnames que resuelven a este tenant.
+ */
+
+export {};

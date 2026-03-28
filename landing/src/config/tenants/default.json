@@ -1,0 +1,22 @@
+{
+  "id": "default",
+  "commercialName": "Mi Compañía",
+  "pageTitle": "Plataforma de recaudos | Mi Compañía",
+  "logo": {
+    "initials": "MC"
+  },
+  "colors": {
+    "primary": "#0d9488",
+    "primaryHover": "#0f766e",
+    "accent": "#d97706",
+    "surface": "#fafaf9",
+    "ink": "#0f172a"
+  },
+  "footerCopyright": "© Mi Compañía. Todos los derechos reservados.",
+  "features": {
+    "banners": true,
+    "chat": false,
+    "cleanMode": true
+  },
+  "hostnames": ["localhost", "127.0.0.1"]
+}
