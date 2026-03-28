@@ -1,0 +1,18 @@
+import { defineConfig, mergeConfig } from 'vitest/config';
+import viteConfig from './vite.config.js';
+
+export default mergeConfig(
+  viteConfig,
+  defineConfig({
+    test: {
+      environment: 'node',
+      include: ['src/**/*.test.js'],
+      coverage: {
+        provider: 'v8',
+        reporter: ['text', 'html'],
+        include: ['src/**/*.js'],
+        exclude: ['**/*.test.js', 'src/main.js'],
+      },
+    },
+  }),
+);
