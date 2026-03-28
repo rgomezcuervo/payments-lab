@@ -6,7 +6,7 @@ export default mergeConfig(
   defineConfig({
     test: {
       environment: 'node',
-      include: ['src/**/*.test.js'],
+      include: ['src/**/*.test.js', 'tests/**/*.spec.js'],
       coverage: {
         provider: 'v8',
         reporter: ['text', 'html'],
@@ -20,18 +20,10 @@ export default mergeConfig(
           'src/js/ui/faq.js',
         ],
         thresholds: {
-          'src/js/i18n/i18n.js': {
-            lines: 100,
-            statements: 100,
-            functions: 100,
-            branches: 88,
-          },
-          'src/js/ui/nav.js': {
-            lines: 100,
-            statements: 100,
-            functions: 83,
-            branches: 88,
-          },
+          lines: 90,
+          statements: 90,
+          functions: 90,
+          branches: 72,
         },
       },
     },

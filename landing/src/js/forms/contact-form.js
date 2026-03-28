@@ -207,10 +207,11 @@ export function initContactForm(root, options) {
     clearStatus();
   }
 
-  root.ownerDocument.addEventListener(LOCALE_CHANGE_EVENT, onLocaleChange);
+  const docForLocale = root instanceof Document ? root : root.ownerDocument;
+  docForLocale?.addEventListener(LOCALE_CHANGE_EVENT, onLocaleChange);
 
   return () => {
     form.removeEventListener('submit', onSubmit);
-    root.ownerDocument.removeEventListener(LOCALE_CHANGE_EVENT, onLocaleChange);
+    docForLocale?.removeEventListener(LOCALE_CHANGE_EVENT, onLocaleChange);
   };
 }

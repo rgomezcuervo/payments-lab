@@ -1,3 +1,9 @@
+/**
+ * Bootstrap de la landing: ensambla fragmentos HTML, aplica tenant/CMS, i18n y módulos de UI.
+ *
+ * @module main
+ */
+
 import navHtml from '../components/nav.html?raw';
 import heroHtml from '../components/hero.html?raw';
 import servicesHtml from '../components/services.html?raw';
@@ -36,6 +42,11 @@ const SECTIONS = [
   contactHtml,
 ].join('\n');
 
+/**
+ * Monta header, main, footer, modo limpio y cablea navegación, FAQ, banners, chat y contacto.
+ *
+ * @returns {Promise<void>}
+ */
 export async function mountLanding() {
   const { tenantId, config } = resolveTenant(
     typeof globalThis !== 'undefined' && globalThis.location ? globalThis.location : undefined,

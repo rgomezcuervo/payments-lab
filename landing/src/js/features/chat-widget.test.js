@@ -26,4 +26,27 @@ describe('initChatWidget', () => {
       'https://example.com/widget.js',
     );
   });
+
+  it('toggles panel open and closed via buttons', () => {
+    document.body.innerHTML = '<div id="chat-widget-root"></div>';
+    initChatWidget(document, { enabled: true });
+    const toggle = document.querySelector('[data-chat-toggle]');
+    const panel = document.querySelector('#chat-widget-panel');
+    if (!(toggle instanceof HTMLButtonElement) || !(panel instanceof HTMLElement)) throw new Error('fixture');
+    expect(panel.classList.contains('hidden')).toBe(true);
+    toggle.click();
+    expect(panel.classList.contains('hidden')).toBe(false);
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+    const closeBtn = document.querySelector('[data-chat-close]');
+    if (!(closeBtn instanceof HTMLButtonElement)) throw new Error('fixture');
+    closeBtn.click();
+    expect(panel.classList.contains('hidden')).toBe(true);
+  });
+
+  it('does not duplicate external script on second init', () => {
+    document.body.innerHTML = '<div id="chat-widget-root"></div>';
+    initChatWidget(document, { enabled: true, scriptUrl: 'https://example.com/a.js' });
+    initChatWidget(document, { enabled: true, scriptUrl: 'https://example.com/b.js' });
+    expect(document.querySelectorAll('script[data-chat-external="true"]').length).toBe(1);
+  });
 });

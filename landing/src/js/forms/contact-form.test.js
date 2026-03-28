@@ -147,4 +147,159 @@ describe('initContactForm', () => {
       expect(st?.textContent).toBe('poc');
     });
   });
+
+  it('returns noop when form is missing', () => {
+    document.body.innerHTML = '<div></div>';
+    const unbind = initContactForm(document.body, { t: tEs });
+    expect(typeof unbind).toBe('function');
+    unbind();
+  });
+
+  it('shows HTTP error when fetch returns not ok', async () => {
+    document.body.innerHTML = `
+      <div>
+        <form id="contact-form" action="#" method="post" novalidate>
+          <p id="contact-form-status" class="hidden" role="status"></p>
+          <input id="contact-name" name="name" value="Ana" />
+          <input id="contact-email" name="email" value="ana@example.com" />
+          <textarea id="contact-message" name="message">Hola</textarea>
+          <p class="hidden" data-contact-error="name"></p>
+          <p class="hidden" data-contact-error="email"></p>
+          <p class="hidden" data-contact-error="message"></p>
+          <button type="submit">Go</button>
+        </form>
+      </div>`;
+
+    const fetchFn = vi.fn().mockResolvedValue({ ok: false, status: 500 });
+
+    initContactForm(document.body, {
+      t: tEs,
+      submitUrl: 'https://api.example.com/contact',
+      fetchFn,
+      executeRecaptcha: async () => 'tok',
+      recaptchaSiteKey: 'k',
+    });
+
+    const form = document.getElementById('contact-form');
+    if (!(form instanceof HTMLFormElement)) throw new Error('fixture');
+    form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+
+    await vi.waitFor(() => {
+      expect(document.getElementById('contact-form-status')?.textContent).toBe('http');
+    });
+  });
+
+  it('treats submitUrl # as PoC (no POST)', async () => {
+    document.body.innerHTML = `
+      <div>
+        <form id="contact-form" action="#" method="post" novalidate>
+          <p id="contact-form-status" class="hidden" role="status"></p>
+          <input id="contact-name" name="name" value="Ana" />
+          <input id="contact-email" name="email" value="ana@example.com" />
+          <textarea id="contact-message" name="message">Hola</textarea>
+          <p class="hidden" data-contact-error="name"></p>
+          <p class="hidden" data-contact-error="email"></p>
+          <p class="hidden" data-contact-error="message"></p>
+          <button type="submit">Go</button>
+        </form>
+      </div>`;
+
+    const fetchFn = vi.fn();
+
+    initContactForm(document.body, {
+      t: tEs,
+      submitUrl: '#',
+      fetchFn,
+      executeRecaptcha: async () => 'tok',
+      recaptchaSiteKey: 'k',
+    });
+
+    const form = document.getElementById('contact-form');
+    if (!(form instanceof HTMLFormElement)) throw new Error('fixture');
+    form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+
+    await vi.waitFor(() => {
+      expect(document.getElementById('contact-form-status')?.textContent).toBe('poc');
+    });
+    expect(fetchFn).not.toHaveBeenCalled();
+  });
+
+  it('shows network error when executeRecaptcha throws', async () => {
+    document.body.innerHTML = `
+      <div>
+        <form id="contact-form" action="#" method="post" novalidate>
+          <p id="contact-form-status" class="hidden" role="status"></p>
+          <input id="contact-name" name="name" value="Ana" />
+          <input id="contact-email" name="email" value="ana@example.com" />
+          <textarea id="contact-message" name="message">Hola</textarea>
+          <p class="hidden" data-contact-error="name"></p>
+          <p class="hidden" data-contact-error="email"></p>
+          <p class="hidden" data-contact-error="message"></p>
+          <button type="submit">Go</button>
+        </form>
+      </div>`;
+
+    initContactForm(document.body, {
+      t: tEs,
+      submitUrl: '',
+      recaptchaSiteKey: 'k',
+      executeRecaptcha: async () => {
+        throw new Error('recaptcha-fail');
+      },
+    });
+
+    const form = document.getElementById('contact-form');
+    if (!(form instanceof HTMLFormElement)) throw new Error('fixture');
+    form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+
+    await vi.waitFor(() => {
+      expect(document.getElementById('contact-form-status')?.textContent).toBe('net');
+    });
+  });
+
+  it('clears errors on locale change event', () => {
+    document.body.innerHTML = `
+      <div>
+        <form id="contact-form" action="#" method="post" novalidate>
+          <p id="contact-form-status" class="hidden" role="status">x</p>
+          <input id="contact-name" name="name" value="" />
+          <input id="contact-email" name="email" value="" />
+          <textarea id="contact-message" name="message"></textarea>
+          <p class="hidden" data-contact-error="name"></p>
+          <p class="hidden" data-contact-error="email"></p>
+          <p class="hidden" data-contact-error="message"></p>
+          <button type="submit">Go</button>
+        </form>
+      </div>`;
+
+    initContactForm(document.body, { t: tEs });
+    const form = document.getElementById('contact-form');
+    if (!(form instanceof HTMLFormElement)) throw new Error('fixture');
+    form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+
+    expect(document.getElementById('contact-form-status')?.textContent).toBe('');
+
+    document.dispatchEvent(new CustomEvent('landing:locale-change', { detail: { locale: 'en' } }));
+
+    const st = document.getElementById('contact-form-status');
+    expect(st?.classList.contains('hidden')).toBe(true);
+  });
+
+  it('shows recaptcha hint when site key is set', () => {
+    document.body.innerHTML = `
+      <div>
+        <p data-contact-recaptcha-hint class="hidden">hint</p>
+        <form id="contact-form" action="#" method="post" novalidate>
+          <p id="contact-form-status" class="hidden" role="status"></p>
+          <input id="contact-name" name="name" value="" />
+          <input id="contact-email" name="email" value="" />
+          <textarea id="contact-message" name="message"></textarea>
+          <button type="submit">Go</button>
+        </form>
+      </div>`;
+
+    initContactForm(document.body, { t: tEs, recaptchaSiteKey: 'site-key' });
+    const hint = document.querySelector('[data-contact-recaptcha-hint]');
+    expect(hint?.classList.contains('hidden')).toBe(false);
+  });
 });
