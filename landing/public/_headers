@@ -1,0 +1,7 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com https://scripts.clarity.ms https://www.clarity.ms https://www.datadoghq-browser-agent.com https://static.datadoghq.com; style-src 'self' https://www.gstatic.com; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google.com https://www.gstatic.com https://region1.google-analytics.com https://www.google-analytics.com https://www.googletagmanager.com https://scripts.clarity.ms https://www.clarity.ms https://browser-intake-datadoghq.com https://rum.browser-intake-datadoghq.com https://*.datadoghq.com; frame-src https://www.google.com https://www.recaptcha.net

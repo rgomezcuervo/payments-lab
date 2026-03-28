@@ -23,6 +23,7 @@ import { initFaqAccordion } from './features/faq.js';
 import { initBanners } from './features/banners.js';
 import { initChatWidget } from './features/chat-widget.js';
 import { initCleanMode, syncCleanModeToggle } from './features/clean-mode.js';
+import { initContactForm } from './forms/contact-form.js';
 
 const SECTIONS = [
   heroHtml,
@@ -107,6 +108,13 @@ export async function mountLanding() {
     chatFeatureEnabled: config.features?.chat === true,
   });
   syncCleanModeToggle(document, i18n.t);
+
+  initContactForm(document, {
+    t: i18n.t,
+    submitUrl: typeof import.meta.env.VITE_CONTACT_FORM_ENDPOINT === 'string' ? import.meta.env.VITE_CONTACT_FORM_ENDPOINT : '',
+    recaptchaSiteKey:
+      typeof import.meta.env.VITE_RECAPTCHA_SITE_KEY === 'string' ? import.meta.env.VITE_RECAPTCHA_SITE_KEY : '',
+  });
 
   applyI18nToDom(document, i18n.getLocale());
 }

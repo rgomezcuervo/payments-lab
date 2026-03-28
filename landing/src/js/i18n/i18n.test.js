@@ -142,6 +142,19 @@ describe('initI18nController', () => {
     expect(ctrl.getLocale()).toBe('es');
   });
 
+  it('setLocale syncs selects marked with data-lang-select', () => {
+    document.documentElement.innerHTML = `
+      <body>
+        <div id="i18n-live"></div>
+        <select data-lang-select><option value="es">Español</option><option value="en">English</option></select>
+        <p data-i18n-key="nav.services"></p>
+      </body>`;
+    const ctrl = initI18nController({ document, initialLocale: 'es' });
+    ctrl.setLocale('en');
+    const sel = document.querySelector('[data-lang-select]');
+    expect(sel instanceof HTMLSelectElement && sel.value).toBe('en');
+  });
+
   it('t() returns strings for the active locale', () => {
     const ctrl = initI18nController({ document, initialLocale: 'en' });
     expect(ctrl.t('nav.services')).toBe('Services');

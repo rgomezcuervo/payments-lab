@@ -144,7 +144,18 @@
     "fieldName": "Name",
     "fieldEmail": "Email",
     "fieldMessage": "Message",
-    "submit": "Send"
+    "submit": "Send",
+    "recaptchaNotice": "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.",
+    "validation": {
+      "nameRequired": "Please enter your name.",
+      "emailRequired": "Please enter an email address.",
+      "emailInvalid": "That email doesn’t look valid.",
+      "messageRequired": "Please enter a message."
+    },
+    "success": "Thanks — we’ve received your message.",
+    "successPoc": "Validation passed. This demo has no backend configured; set `VITE_CONTACT_FORM_ENDPOINT` to send real data.",
+    "errorNetwork": "We couldn’t send the form. Check your connection and try again.",
+    "errorHttp": "The server couldn’t process the submission. Please try again later."
   },
   "footer": {
     "brand": "My Company",

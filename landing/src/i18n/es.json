@@ -144,7 +144,18 @@
     "fieldName": "Nombre",
     "fieldEmail": "Correo electrónico",
     "fieldMessage": "Mensaje",
-    "submit": "Enviar"
+    "submit": "Enviar",
+    "recaptchaNotice": "Este sitio está protegido por reCAPTCHA y aplican la Política de Privacidad y los Términos de Google.",
+    "validation": {
+      "nameRequired": "Indica tu nombre.",
+      "emailRequired": "Indica un correo electrónico.",
+      "emailInvalid": "El correo no tiene un formato válido.",
+      "messageRequired": "Escribe un mensaje."
+    },
+    "success": "Gracias. Hemos recibido tu mensaje.",
+    "successPoc": "Validación correcta. En este entorno de demostración no hay backend configurado; conecta `VITE_CONTACT_FORM_ENDPOINT` para enviar datos reales.",
+    "errorNetwork": "No pudimos enviar el formulario. Revisa tu conexión e inténtalo de nuevo.",
+    "errorHttp": "El servidor no pudo procesar el envío. Inténtalo más tarde."
   },
   "footer": {
     "brand": "Mi Compañía",

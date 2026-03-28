@@ -18,7 +18,8 @@
         </ul>
       </div>
       <div class="rounded-3xl border border-slate-200 bg-slate-50/80 p-6 shadow-sm sm:p-8" data-cms-slot="contact-form">
-        <form class="space-y-5" id="contact-form" action="#" method="post" novalidate>
+        <form class="space-y-5" id="contact-form" action="#" method="post" novalidate aria-busy="false">
+          <p id="contact-form-status" class="text-sm font-medium hidden" role="status" aria-live="polite"></p>
           <div>
             <label for="contact-name" class="block text-sm font-medium text-slate-800" data-i18n-key="contact.fieldName">Nombre</label>
             <input
@@ -26,8 +27,11 @@
               name="name"
               type="text"
               autocomplete="name"
+              required
+              aria-required="true"
               class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
             />
+            <p id="contact-name-error" class="mt-1 hidden text-sm text-red-600" data-contact-error="name" role="alert"></p>
           </div>
           <div>
             <label for="contact-email" class="block text-sm font-medium text-slate-800" data-i18n-key="contact.fieldEmail">Correo electrónico</label>
@@ -36,8 +40,11 @@
               name="email"
               type="email"
               autocomplete="email"
+              required
+              aria-required="true"
               class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
             />
+            <p id="contact-email-error" class="mt-1 hidden text-sm text-red-600" data-contact-error="email" role="alert"></p>
           </div>
           <div>
             <label for="contact-message" class="block text-sm font-medium text-slate-800" data-i18n-key="contact.fieldMessage">Mensaje</label>
@@ -45,12 +52,18 @@
               id="contact-message"
               name="message"
               rows="4"
+              required
+              aria-required="true"
               class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
             ></textarea>
+            <p id="contact-message-error" class="mt-1 hidden text-sm text-red-600" data-contact-error="message" role="alert"></p>
           </div>
+          <p class="text-xs text-slate-500" data-i18n-key="contact.recaptchaNotice" data-contact-recaptcha-hint hidden>
+            Este sitio está protegido por reCAPTCHA y aplican la Política de Privacidad y los Términos de Google.
+          </p>
           <button
             type="submit"
-            class="w-full rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-teal-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+            class="w-full rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-teal-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 disabled:cursor-not-allowed disabled:opacity-60"
             data-i18n-key="contact.submit"
           >
             Enviar
