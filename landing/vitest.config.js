@@ -18,6 +18,20 @@ export default mergeConfig(
           'src/js/cms/content-provider.js',
           'src/js/tenant/tenant-config.js',
         ],
+        thresholds: {
+          'src/js/i18n/i18n.js': {
+            lines: 100,
+            statements: 100,
+            functions: 100,
+            branches: 88,
+          },
+          'src/js/ui/nav.js': {
+            lines: 100,
+            statements: 100,
+            functions: 83,
+            branches: 88,
+          },
+        },
       },
     },
   }),

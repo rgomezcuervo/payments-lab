@@ -1,13 +1,11 @@
 {
   "base": {
-    "slots": {
-      "hero-visual": "<div class=\"aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-[color:var(--brand-primary)]/20 via-white to-[color:var(--brand-accent)]/15 shadow-xl ring-1 ring-slate-900/5\"><div class=\"flex h-full flex-col justify-between p-8 sm:p-10\"><div class=\"flex items-center justify-between\"><span class=\"rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-slate-800 shadow-sm\">CMS</span><span class=\"h-3 w-3 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.25)]\" aria-hidden=\"true\"></span></div><div class=\"space-y-3\"><p class=\"text-sm text-slate-500\">Contenido mock</p><p class=\"text-3xl font-semibold tracking-tight text-slate-900\">$ 8.920.000</p><p class=\"text-sm text-slate-600\">Texto inyectado vía ContentProvider (mock).</p></div></div></div>"
-    }
+    "slots": {}
   },
   "tenants": {
     "comercio-norte": {
       "slots": {
-        "hero-visual": "<div class=\"aspect-[4/3] overflow-hidden rounded-3xl border border-blue-200/80 bg-gradient-to-br from-blue-100/90 via-white to-violet-50 shadow-xl ring-1 ring-slate-900/5\"><div class=\"flex h-full flex-col justify-between p-8 sm:p-10\"><div class=\"flex items-center justify-between\"><span class=\"rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-blue-800 shadow-sm\">Red norte</span><span class=\"h-3 w-3 rounded-full bg-blue-500 shadow-[0_0_0_4px_rgba(59,130,246,0.25)]\" aria-hidden=\"true\"></span></div><div class=\"space-y-3\"><p class=\"text-sm text-slate-500\">CMS — tenant comercio-norte</p><p class=\"text-3xl font-semibold tracking-tight text-slate-900\">$ 21.340.000</p><p class=\"text-sm text-slate-600\">Bloque hero sustituido por mock CMS para este comercio.</p></div></div></div>"
+        "hero-visual": "<div class=\"aspect-[4/3] overflow-hidden rounded-3xl border border-blue-200/80 bg-gradient-to-br from-blue-100/90 via-white to-violet-50 shadow-xl ring-1 ring-slate-900/5\"><div class=\"flex h-full flex-col justify-between p-8 sm:p-10\"><div class=\"flex items-center justify-between\"><span class=\"rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-blue-800 shadow-sm\" data-i18n-key=\"hero.cmsComercio.badge\">Red norte</span><span class=\"h-3 w-3 rounded-full bg-blue-500 shadow-[0_0_0_4px_rgba(59,130,246,0.25)]\" aria-hidden=\"true\"></span></div><div class=\"space-y-3\"><p class=\"text-sm text-slate-500\" data-i18n-key=\"hero.cmsComercio.label\">CMS — tenant comercio-norte</p><p class=\"text-3xl font-semibold tracking-tight text-slate-900\">$ 21.340.000</p><p class=\"text-sm text-slate-600\" data-i18n-key=\"hero.cmsComercio.caption\">Bloque hero sustituido por mock CMS para este comercio.</p></div></div></div>"
       }
     }
   }

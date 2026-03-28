@@ -1,0 +1,144 @@
+{
+  "a11y": {
+    "skip": "Saltar al contenido",
+    "langChanged": "Idioma cambiado a español"
+  },
+  "meta": {
+    "defaultTitle": "Plataforma de recaudos"
+  },
+  "nav": {
+    "ariaMain": "Principal",
+    "brand": "Mi Compañía",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "services": "Servicios",
+    "benefits": "Beneficios",
+    "testimonials": "Testimonios",
+    "faq": "FAQ",
+    "ctaPay": "Pagar",
+    "langLabel": "Idioma",
+    "langSelectAria": "Seleccionar idioma del sitio"
+  },
+  "hero": {
+    "eyebrow": "Recaudos con confianza",
+    "title": "Pagos claros, cercanos y seguros para tu negocio",
+    "subtitle": "Una plataforma de recaudo pensada para generar tranquilidad en cada transacción y fortalecer la relación con tus clientes.",
+    "ctaPrimary": "Empezar a cobrar",
+    "ctaSecondary": "Ver servicios",
+    "cardBadge": "Experiencia premium",
+    "cardLabel": "Resumen del día",
+    "cardAmount": "$ 12.480.000",
+    "cardCaption": "Cobros recientes consolidados en un solo lugar.",
+    "cmsComercio": {
+      "badge": "Red norte",
+      "label": "CMS — tenant comercio-norte",
+      "caption": "Bloque hero sustituido por mock CMS para este comercio."
+    }
+  },
+  "services": {
+    "title": "Servicios que impulsan tu recaudo",
+    "lead": "Herramientas pensadas para comercios que buscan claridad operativa y una experiencia impecable para el pagador.",
+    "item1": {
+      "title": "Cobros omnicanal",
+      "body": "Unifica canales y reduce fricción para quien paga, sin sacrificar control."
+    },
+    "item2": {
+      "title": "Seguridad y trazabilidad",
+      "body": "Visibilidad de cada movimiento con estándares que generan confianza."
+    },
+    "item3": {
+      "title": "Liquidaciones ágiles",
+      "body": "Menos tiempo operando, más tiempo creciendo con tu negocio."
+    }
+  },
+  "benefits": {
+    "title": "Por qué elegirnos",
+    "lead": "Diseñamos la experiencia para que pagadores y comercios se sientan acompañados en cada paso.",
+    "b1": {
+      "title": "Cercanía real",
+      "body": "Lenguaje claro, tono humano y soporte que responde con contexto."
+    },
+    "b2": {
+      "title": "Marca blanca lista",
+      "body": "Personaliza imagen y estilo cuando tu plan lo permita; si no, usamos la identidad de Mi Compañía con consistencia."
+    },
+    "b3": {
+      "title": "Rendimiento estable",
+      "body": "Interfaz liviana, animaciones sutiles y foco en conversión sin saturar."
+    }
+  },
+  "banners": {
+    "title": "Promociones y avisos",
+    "lead": "Novedades para ti y para tus comercios aliados.",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "slide1": {
+      "tag": "Para comercios",
+      "title": "Menos fricción en cada cobro",
+      "body": "Activa flujos guiados y reduce abandonos con mensajes claros en el checkout."
+    },
+    "slide2": {
+      "tag": "Aliados",
+      "title": "Programa de referidos",
+      "body": "Recomienda la plataforma y haz crecer la red con incentivos alineados a tu región."
+    },
+    "slide3": {
+      "tag": "Novedad",
+      "title": "Panel unificado",
+      "body": "Visualiza recaudos, conciliaciones y alertas en un solo lugar."
+    }
+  },
+  "testimonials": {
+    "title": "Historias que nos inspiran",
+    "lead": "Comercios que confían en una experiencia de pago cálida y profesional.",
+    "prev": "Testimonio anterior",
+    "next": "Siguiente testimonio",
+    "q1": "“Pasamos de mensajes confusos a cobros que nuestros clientes entienden al primer vistazo.”",
+    "q2": "“El equipo acompañó la puesta en marcha con un tono cercano; eso marca la diferencia.”",
+    "q3": "“Liquidaciones más claras nos devolvieron tiempo para enfocarnos en vender.”",
+    "a1": {
+      "name": "Laura R.",
+      "role": "Retail · Bogotá"
+    },
+    "a2": {
+      "name": "Carlos M.",
+      "role": "Servicios · Medellín"
+    },
+    "a3": {
+      "name": "Sofía V.",
+      "role": "Gastronomía · Cali"
+    }
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "lead": "Respuestas directas para decidir con tranquilidad.",
+    "q1": "¿Cómo empiezo a recaudar?",
+    "a1": "Completa el formulario de contacto o agenda una demo: te guiamos en la activación y en la configuración de tu marca.",
+    "q2": "¿Puedo usar mi propia marca?",
+    "a2": "Sí. Con el plan de personalización aplicamos logo, colores y piezas visuales; si no, mostramos la experiencia por defecto de Mi Compañía.",
+    "q3": "¿Hay soporte en mi idioma?",
+    "a3": "La interfaz está preparada para español e inglés; el canal de soporte se alinea a tu mercado."
+  },
+  "contact": {
+    "title": "Hablemos de tu próximo paso",
+    "lead": "Déjanos tus datos y te contactamos para activar recaudos o coordinar una demo.",
+    "bullet1": "Respuesta en horario laboral con contexto de tu industria.",
+    "bullet2": "Opción de referir comercios desde el mismo canal.",
+    "fieldName": "Nombre",
+    "fieldEmail": "Correo electrónico",
+    "fieldMessage": "Mensaje",
+    "submit": "Enviar"
+  },
+  "footer": {
+    "brand": "Mi Compañía",
+    "tagline": "Plataforma de recaudo con enfoque humano, seguro y escalable para comercios y pagadores.",
+    "colExplore": "Explorar",
+    "linkServices": "Servicios",
+    "linkBenefits": "Beneficios",
+    "linkFaq": "FAQ",
+    "colLegal": "Legal",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "copy": "© Mi Compañía. Todos los derechos reservados."
+  }
+}

@@ -1,9 +1,35 @@
 const PANEL_HIDDEN_MOBILE = 'max-md:hidden';
 
 /**
- * @param {HTMLElement} root
+ * @param {HTMLButtonElement} toggle
+ * @param {(key: string) => string} translate
  */
-export function initNav(root) {
+function applyToggleAria(toggle, translate) {
+  const expanded = toggle.getAttribute('aria-expanded') === 'true';
+  const label = expanded ? translate('nav.closeMenu') : translate('nav.openMenu');
+  toggle.setAttribute('aria-label', label);
+}
+
+/**
+ * Sincroniza etiquetas ARIA del botón menú (p. ej. tras cambiar idioma).
+ *
+ * @param {HTMLElement} root
+ * @param {(key: string) => string} translate
+ */
+export function syncNavToggleAria(root, translate) {
+  const toggle = root.querySelector('[data-nav-toggle]');
+  if (!toggle || !(toggle instanceof HTMLButtonElement)) return;
+  applyToggleAria(toggle, translate);
+}
+
+/**
+ * @param {HTMLElement} root
+ * @param {{ t?: (key: string) => string }} [options]
+ */
+export function initNav(root, options = {}) {
+  const { t } = options;
+  const translate = typeof t === 'function' ? t : () => '';
+
   const toggle = root.querySelector('[data-nav-toggle]');
   const panel = root.querySelector('[data-nav-panel]');
   if (!toggle || !panel || !(toggle instanceof HTMLButtonElement)) return;
@@ -15,20 +41,27 @@ export function initNav(root) {
     if (open) panel.classList.remove(PANEL_HIDDEN_MOBILE);
     else panel.classList.add(PANEL_HIDDEN_MOBILE);
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    if (t) applyToggleAria(toggle, translate);
+    else {
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    }
   }
 
   function syncLayout() {
     if (mq.matches) {
       panel.classList.remove(PANEL_HIDDEN_MOBILE);
       toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Abrir menú');
+      if (t) applyToggleAria(toggle, translate);
+      else toggle.setAttribute('aria-label', 'Abrir menú');
     } else {
       panel.classList.add(PANEL_HIDDEN_MOBILE);
       toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Abrir menú');
+      if (t) applyToggleAria(toggle, translate);
+      else toggle.setAttribute('aria-label', 'Abrir menú');
     }
   }
+
+  if (t) applyToggleAria(toggle, translate);
 
   toggle.addEventListener('click', () => {
     if (mq.matches) return;

@@ -2,6 +2,10 @@
   "id": "comercio-norte",
   "commercialName": "Comercio Norte",
   "pageTitle": "Cobros y recaudos | Comercio Norte",
+  "pageTitleByLocale": {
+    "es": "Cobros y recaudos | Comercio Norte",
+    "en": "Collections and payments | Comercio Norte"
+  },
   "logo": {
     "initials": "CN"
   },

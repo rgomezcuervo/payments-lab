@@ -6,8 +6,7 @@ describe('createMockContentProvider', () => {
     const cms = createMockContentProvider();
     const def = await cms.getLandingContent('default');
     const norte = await cms.getLandingContent('comercio-norte');
-    expect(def.slots?.['hero-visual']).toBeDefined();
+    expect(def.slots?.['hero-visual']).toBeUndefined();
     expect(norte.slots?.['hero-visual']).toBeDefined();
-    expect(norte.slots?.['hero-visual']).not.toBe(def.slots?.['hero-visual']);
   });
 });

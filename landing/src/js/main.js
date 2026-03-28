@@ -12,7 +12,9 @@ import { applyLandingContent } from './cms/apply-landing-content.js';
 import { createMockContentProvider } from './cms/mock-provider.js';
 import { applyTenantBranding } from './tenant/apply-branding.js';
 import { resolveTenant } from './tenant/resolve-tenant.js';
-import { initNav } from './ui/nav.js';
+import { applyI18nToDom, initI18nController } from './i18n/i18n.js';
+import { detectInitialLocale } from './i18n/locale-detector.js';
+import { initNav, syncNavToggleAria } from './ui/nav.js';
 import { initScrollAnimations } from './ui/scroll-animations.js';
 import { initCarousel } from './ui/testimonials.js';
 import { initFaqAccordion } from './ui/faq.js';
@@ -43,10 +45,28 @@ export async function mountLanding() {
   main.innerHTML = SECTIONS;
   footer.innerHTML = footerHtml;
 
-  applyTenantBranding(document, config);
-  applyLandingContent(document.documentElement, landingContent);
+  const initialLocale = detectInitialLocale({
+    location: typeof globalThis !== 'undefined' && globalThis.location ? globalThis.location : undefined,
+    storage: typeof globalThis !== 'undefined' ? globalThis.localStorage : undefined,
+    navigator: typeof globalThis !== 'undefined' ? globalThis.navigator : undefined,
+  });
 
-  initNav(header);
+  const i18n = initI18nController({
+    document,
+    initialLocale,
+    onLocaleChange: () => {
+      applyTenantBranding(document, config, { locale: i18n.getLocale(), t: i18n.t });
+      syncNavToggleAria(header, i18n.t);
+    },
+  });
+  i18n.bindLanguageSelect();
+
+  applyTenantBranding(document, config, { locale: i18n.getLocale(), t: i18n.t });
+  applyLandingContent(document.documentElement, landingContent);
+  applyI18nToDom(document, i18n.getLocale());
+  applyTenantBranding(document, config, { locale: i18n.getLocale(), t: i18n.t });
+
+  initNav(header, { t: i18n.t });
   initScrollAnimations(document);
   document.querySelectorAll('[data-carousel]').forEach((el) => {
     if (el instanceof HTMLElement) initCarousel(el);

@@ -2,6 +2,10 @@
   "id": "default",
   "commercialName": "Mi Compañía",
   "pageTitle": "Plataforma de recaudos | Mi Compañía",
+  "pageTitleByLocale": {
+    "es": "Plataforma de recaudos | Mi Compañía",
+    "en": "Collections platform | My Company"
+  },
   "logo": {
     "initials": "MC"
   },

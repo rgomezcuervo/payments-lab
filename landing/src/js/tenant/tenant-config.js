@@ -4,7 +4,8 @@
  * @typedef {object} TenantConfig
  * @property {string} id Identificador estable (coincide con nombre lógico del tenant).
  * @property {string} commercialName Nombre comercial mostrado en cabecera y pie.
- * @property {string} pageTitle Título del documento.
+ * @property {string} [pageTitle] Título único del documento (legacy; se usa si no hay `pageTitleByLocale` para el locale).
+ * @property {Partial<Record<'es' | 'en', string>>} [pageTitleByLocale] Título por idioma; tiene prioridad sobre `pageTitle` cuando existe entrada no vacía.
  * @property {{ initials: string }} logo Marca por iniciales en el mark del logo.
  * @property {object} colors Paleta mapeada a variables CSS `--brand-*`.
  * @property {string} colors.primary

@@ -1,0 +1,144 @@
+{
+  "a11y": {
+    "skip": "Skip to content",
+    "langChanged": "Language changed to English"
+  },
+  "meta": {
+    "defaultTitle": "Collections platform"
+  },
+  "nav": {
+    "ariaMain": "Main",
+    "brand": "My Company",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "services": "Services",
+    "benefits": "Benefits",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "ctaPay": "Pay",
+    "langLabel": "Language",
+    "langSelectAria": "Choose site language"
+  },
+  "hero": {
+    "eyebrow": "Trusted collections",
+    "title": "Clear, human, and secure payments for your business",
+    "subtitle": "A collections platform designed to bring peace of mind to every transaction and strengthen your relationship with customers.",
+    "ctaPrimary": "Start collecting",
+    "ctaSecondary": "View services",
+    "cardBadge": "Premium experience",
+    "cardLabel": "Today’s summary",
+    "cardAmount": "$ 12,480,000",
+    "cardCaption": "Recent collections consolidated in one place.",
+    "cmsComercio": {
+      "badge": "North network",
+      "label": "CMS — comercio-norte tenant",
+      "caption": "Hero block replaced by the CMS mock for this merchant."
+    }
+  },
+  "services": {
+    "title": "Services that power your collections",
+    "lead": "Built for merchants who want operational clarity and a flawless payer experience.",
+    "item1": {
+      "title": "Omnichannel collections",
+      "body": "Unify channels and reduce friction for payers without losing control."
+    },
+    "item2": {
+      "title": "Security and traceability",
+      "body": "Visibility into every movement with standards that build trust."
+    },
+    "item3": {
+      "title": "Fast settlements",
+      "body": "Less time on operations, more time growing your business."
+    }
+  },
+  "benefits": {
+    "title": "Why choose us",
+    "lead": "We designed the experience so payers and merchants feel supported at every step.",
+    "b1": {
+      "title": "Real closeness",
+      "body": "Plain language, a human tone, and support that answers with context."
+    },
+    "b2": {
+      "title": "White-label ready",
+      "body": "Customize look and feel when your plan allows; otherwise we keep My Company’s identity consistent."
+    },
+    "b3": {
+      "title": "Stable performance",
+      "body": "A lightweight UI, subtle motion, and conversion focus without noise."
+    }
+  },
+  "banners": {
+    "title": "Promotions and notices",
+    "lead": "What’s new for you and your partner merchants.",
+    "prev": "Previous",
+    "next": "Next",
+    "slide1": {
+      "tag": "For merchants",
+      "title": "Less friction on every collection",
+      "body": "Enable guided flows and reduce drop-offs with clear checkout messaging."
+    },
+    "slide2": {
+      "tag": "Partners",
+      "title": "Referral program",
+      "body": "Recommend the platform and grow the network with incentives aligned to your region."
+    },
+    "slide3": {
+      "tag": "New",
+      "title": "Unified dashboard",
+      "body": "See collections, reconciliations, and alerts in one place."
+    }
+  },
+  "testimonials": {
+    "title": "Stories that inspire us",
+    "lead": "Merchants who trust a warm, professional payment experience.",
+    "prev": "Previous testimonial",
+    "next": "Next testimonial",
+    "q1": "“We went from confusing messages to collections our customers understand at a glance.”",
+    "q2": "“The team supported rollout with a human tone—that makes the difference.”",
+    "q3": "“Clearer settlements gave us time back to focus on selling.”",
+    "a1": {
+      "name": "Laura R.",
+      "role": "Retail · Bogotá"
+    },
+    "a2": {
+      "name": "Carlos M.",
+      "role": "Services · Medellín"
+    },
+    "a3": {
+      "name": "Sofía V.",
+      "role": "Food & beverage · Cali"
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "lead": "Straight answers so you can decide with confidence.",
+    "q1": "How do I start collecting?",
+    "a1": "Fill out the contact form or book a demo—we guide activation and brand setup.",
+    "q2": "Can I use my own brand?",
+    "a2": "Yes. With the customization plan we apply logo, colors, and visuals; otherwise we show My Company’s default experience.",
+    "q3": "Is support available in my language?",
+    "a3": "The interface supports Spanish and English; support channels align with your market."
+  },
+  "contact": {
+    "title": "Let’s talk about your next step",
+    "lead": "Share your details and we’ll reach out to activate collections or schedule a demo.",
+    "bullet1": "Replies during business hours with context for your industry.",
+    "bullet2": "Option to refer merchants through the same channel.",
+    "fieldName": "Name",
+    "fieldEmail": "Email",
+    "fieldMessage": "Message",
+    "submit": "Send"
+  },
+  "footer": {
+    "brand": "My Company",
+    "tagline": "A human-first collections platform—secure and scalable for merchants and payers.",
+    "colExplore": "Explore",
+    "linkServices": "Services",
+    "linkBenefits": "Benefits",
+    "linkFaq": "FAQ",
+    "colLegal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copy": "© My Company. All rights reserved."
+  }
+}

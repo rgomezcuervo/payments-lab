@@ -1,7 +1,7 @@
 /** @vitest-environment jsdom */
 
 import { beforeEach, describe, expect, it } from 'vitest';
-import { applyTenantBranding } from './apply-branding.js';
+import { applyTenantBranding, resolveDocumentTitle } from './apply-branding.js';
 
 const sampleConfig = {
   id: 'test-tenant',
@@ -22,6 +22,63 @@ const sampleConfig = {
     cleanMode: true,
   },
 };
+
+describe('resolveDocumentTitle', () => {
+  it('prefers pageTitleByLocale for the active locale', () => {
+    expect(
+      resolveDocumentTitle(
+        { pageTitle: 'Legacy', pageTitleByLocale: { es: 'Título ES', en: 'EN Title' } },
+        { locale: 'en', t: () => 'meta' },
+      ),
+    ).toBe('EN Title');
+  });
+
+  it('falls back to pageTitle when locale has no pageTitleByLocale entry', () => {
+    expect(
+      resolveDocumentTitle(
+        { pageTitle: 'Solo legacy', pageTitleByLocale: { es: 'Solo ES' } },
+        { locale: 'en', t: () => 'Meta fallback' },
+      ),
+    ).toBe('Solo legacy');
+  });
+
+  it('uses meta.defaultTitle via t when there is no pageTitle', () => {
+    expect(
+      resolveDocumentTitle(
+        {
+          id: 'minimal',
+          commercialName: 'Co',
+          colors: { primary: '#000', primaryHover: '#000', accent: '#000', surface: '#fff', ink: '#000' },
+          logo: { initials: 'C' },
+          features: { banners: false, chat: false, cleanMode: false },
+        },
+        { locale: 'en', t: (k) => (k === 'meta.defaultTitle' ? 'From i18n' : k) },
+      ),
+    ).toBe('From i18n');
+  });
+
+  it('ignores pageTitleByLocale when i18n locale is not passed', () => {
+    expect(
+      resolveDocumentTitle({
+        pageTitle: 'Un solo título',
+        pageTitleByLocale: { en: 'Should not use without locale' },
+      }),
+    ).toBe('Un solo título');
+  });
+
+  it('returns undefined when there is no title source', () => {
+    expect(resolveDocumentTitle({ id: 'only-id' })).toBeUndefined();
+  });
+
+  it('skips empty pageTitleByLocale string and uses pageTitle', () => {
+    expect(
+      resolveDocumentTitle(
+        { pageTitle: 'Fallback', pageTitleByLocale: { en: '   ' } },
+        { locale: 'en', t: () => 'meta' },
+      ),
+    ).toBe('Fallback');
+  });
+});
 
 describe('applyTenantBranding', () => {
   beforeEach(() => {
