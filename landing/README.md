@@ -2,6 +2,8 @@
 
 Aplicación web estática orientada a **marca blanca** y **multi-tenant**: una sola base de código sirve a distintos comercios o la marca por defecto, con textos en **español e inglés**, contenido extensible vía contrato **CMS**, telemetría opcional (GTM, Clarity, Datadog RUM) y calidad asegurada con ESLint, Vitest y umbrales de cobertura.
 
+**Monorepo:** visión general del repositorio, índice de **briefs** (funcional, técnico, plan) y contexto del PoC → [**README raíz**](../../README.md).
+
 ---
 
 ## Tabla de contenidos
@@ -308,4 +310,4 @@ En el repositorio padre existe un workflow **GitHub Actions** (`.github/workflow
 
 ## Licencia y documentación de negocio
 
-Los briefs funcionales y técnicos del producto viven en `payments-lab/briefs/`; este README describe la **implementación** del paquete `landing`.
+Los briefs funcionales y técnicos, el plan por fases y la descripción del alcance del PoC están enlazados desde el [**README del repositorio**](../../README.md). Este documento se centra en la **implementación** del paquete `landing` (código, entorno, integraciones, despliegue).
