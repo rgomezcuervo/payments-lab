@@ -17,7 +17,9 @@
     "faq": "FAQ",
     "ctaPay": "Pagar",
     "langLabel": "Idioma",
-    "langSelectAria": "Seleccionar idioma del sitio"
+    "langSelectAria": "Seleccionar idioma del sitio",
+    "cleanMode": "Modo limpio",
+    "cleanModeExit": "Salir del modo limpio"
   },
   "hero": {
     "eyebrow": "Recaudos con confianza",
@@ -108,6 +110,21 @@
       "name": "Sofía V.",
       "role": "Gastronomía · Cali"
     }
+  },
+  "cleanMode": {
+    "headerAria": "Barra de modo limpio",
+    "openChat": "Abrir chat",
+    "title": "Buscar y pagar",
+    "lead": "Vista minimalista: introduce referencia o consulta rápida.",
+    "fieldLabel": "Referencia o concepto",
+    "placeholder": "Ej. referencia de pago o concepto",
+    "empty": "Los mensajes del asistente aparecerán aquí."
+  },
+  "chat": {
+    "title": "Asistente",
+    "stub": "En este entorno de demostración el chat es una vista previa estática.",
+    "close": "Cerrar",
+    "open": "Abrir asistente de chat"
   },
   "faq": {
     "title": "Preguntas frecuentes",

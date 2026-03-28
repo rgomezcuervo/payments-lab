@@ -10,8 +10,25 @@
  */
 
 /**
+ * Elemento de carrusel de banners (CMS o config; opcionalmente enlazado a i18n vía `*Key`).
+ *
+ * @typedef {object} BannerItem
+ * @property {string} [tag]
+ * @property {string} [title]
+ * @property {string} [body]
+ * @property {string} [tagKey]
+ * @property {string} [titleKey]
+ * @property {string} [bodyKey]
+ * @property {string} [imageUrl]
+ * @property {string} [href]
+ * @property {string} [validFrom] Inicio de vigencia (ISO 8601 fecha).
+ * @property {string} [validUntil] Fin de vigencia (ISO 8601 fecha).
+ */
+
+/**
  * @typedef {object} LandingContent
  * @property {LandingSlots} [slots] Contenido por clave de slot.
+ * @property {BannerItem[]} [bannerItems] Lista opcional para el carrusel de banners (Fase 5).
  */
 
 /**

@@ -1,6 +1,23 @@
 {
   "base": {
-    "slots": {}
+    "slots": {},
+    "bannerItems": [
+      {
+        "tagKey": "banners.slide1.tag",
+        "titleKey": "banners.slide1.title",
+        "bodyKey": "banners.slide1.body"
+      },
+      {
+        "tagKey": "banners.slide2.tag",
+        "titleKey": "banners.slide2.title",
+        "bodyKey": "banners.slide2.body"
+      },
+      {
+        "tagKey": "banners.slide3.tag",
+        "titleKey": "banners.slide3.title",
+        "bodyKey": "banners.slide3.body"
+      }
+    ]
   },
   "tenants": {
     "comercio-norte": {

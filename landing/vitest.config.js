@@ -17,6 +17,7 @@ export default mergeConfig(
           'src/js/main.js',
           'src/js/cms/content-provider.js',
           'src/js/tenant/tenant-config.js',
+          'src/js/ui/faq.js',
         ],
         thresholds: {
           'src/js/i18n/i18n.js': {

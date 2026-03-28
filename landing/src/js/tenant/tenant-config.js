@@ -18,6 +18,8 @@
  * @property {boolean} features.banners
  * @property {boolean} features.chat
  * @property {boolean} features.cleanMode
+ * @property {string} [chatScriptUrl] URL opcional de script de widget de chat (terceros).
+ * @property {{ brand?: boolean, language?: boolean, exit?: boolean, chatShortcut?: boolean }} [cleanModeHeader] Cabecera modo limpio: qué bloques mostrar (atajo chat requiere `features.chat`).
  * @property {string[]} [hostnames] Hostnames que resuelven a este tenant.
  */
 

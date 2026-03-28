@@ -8,9 +8,14 @@
   <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
     <div id="i18n-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
     <a class="skip-link" href="#main-content" data-i18n-key="a11y.skip">Saltar al contenido</a>
-    <header id="site-header" role="banner"></header>
-    <main id="main-content" tabindex="-1"></main>
+    <div id="landing-shell" class="flex min-h-screen flex-col">
+      <header id="site-header" role="banner"></header>
+      <header id="clean-mode-header" class="hidden" role="banner" aria-hidden="true"></header>
+      <main id="main-content" class="flex-1" tabindex="-1"></main>
+      <div id="clean-mode-mount" class="hidden w-full flex-1"></div>
+    </div>
     <footer id="site-footer" class="border-t border-slate-200 bg-white" role="contentinfo"></footer>
+    <div id="chat-widget-root" aria-hidden="true"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

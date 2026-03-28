@@ -24,10 +24,20 @@
     <div
       class="order-2 flex items-center gap-2 md:order-3"
     >
+      <button
+        type="button"
+        class="inline-flex h-10 items-center justify-center rounded-full border border-slate-200/90 bg-white px-3 text-sm font-medium text-slate-700 shadow-sm ring-1 ring-slate-900/5 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brand-primary)]"
+        data-clean-mode-toggle
+        aria-pressed="false"
+        hidden
+      >
+        Modo limpio
+      </button>
       <div class="relative inline-flex items-stretch">
         <label class="sr-only" for="lang-select" data-i18n-key="nav.langLabel">Idioma</label>
         <select
           id="lang-select"
+          data-lang-select
           class="h-10 min-w-[7.25rem] cursor-pointer appearance-none rounded-full border border-slate-200/90 bg-white/95 py-2 pl-4 pr-10 text-sm font-medium text-slate-700 shadow-sm ring-1 ring-slate-900/5 transition hover:border-slate-300 hover:bg-white focus-visible:border-[color:var(--brand-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand-primary)]/25"
           data-i18n-key="nav.langSelectAria"
           data-i18n-attr="aria-label"

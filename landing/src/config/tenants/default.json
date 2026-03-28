@@ -22,5 +22,11 @@
     "chat": false,
     "cleanMode": true
   },
+  "cleanModeHeader": {
+    "brand": true,
+    "language": true,
+    "exit": true,
+    "chatShortcut": false
+  },
   "hostnames": ["localhost", "127.0.0.1"]
 }

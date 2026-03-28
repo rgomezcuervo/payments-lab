@@ -116,8 +116,13 @@ export function initI18nController({ document: doc, initialLocale, onLocaleChang
     persistLocaleToStorage(next);
     persistLocaleToUrl(next);
     applyI18nToDom(doc, locale);
-    const langSelect = doc.getElementById('lang-select');
-    if (langSelect instanceof HTMLSelectElement) langSelect.value = next;
+    doc.querySelectorAll('[data-lang-select]').forEach((el) => {
+      if (el instanceof HTMLSelectElement) el.value = next;
+    });
+    const legacyLang = doc.getElementById('lang-select');
+    if (legacyLang instanceof HTMLSelectElement && !legacyLang.hasAttribute('data-lang-select')) {
+      legacyLang.value = next;
+    }
     announceLocaleChange(locale, liveRegion instanceof HTMLElement ? liveRegion : null);
     doc.dispatchEvent(new CustomEvent(LOCALE_EVENT, { detail: { locale: next } }));
     onLocaleChange?.(next);
@@ -135,12 +140,18 @@ export function initI18nController({ document: doc, initialLocale, onLocaleChang
     setLocale,
     t: translate,
     bindLanguageSelect: () => {
-      const sel = doc.getElementById('lang-select');
-      if (!(sel instanceof HTMLSelectElement)) return;
-      sel.value = getLocale();
-      sel.addEventListener('change', () => {
-        const v = sel.value;
-        if (v === 'es' || v === 'en') setLocale(v);
+      const selects = doc.querySelectorAll('[data-lang-select]');
+      const list =
+        selects.length > 0
+          ? Array.from(selects).filter((s) => s instanceof HTMLSelectElement)
+          : [doc.getElementById('lang-select')].filter((s) => s instanceof HTMLSelectElement);
+      if (list.length === 0) return;
+      list.forEach((sel) => {
+        sel.value = getLocale();
+        sel.addEventListener('change', () => {
+          const v = sel.value;
+          if (v === 'es' || v === 'en') setLocale(v);
+        });
       });
     },
     subscribe: (listener) => {

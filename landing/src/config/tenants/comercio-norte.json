@@ -22,5 +22,11 @@
     "chat": true,
     "cleanMode": false
   },
+  "cleanModeHeader": {
+    "brand": true,
+    "language": true,
+    "exit": true,
+    "chatShortcut": true
+  },
   "hostnames": ["comercio-norte.local"]
 }

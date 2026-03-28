@@ -1,0 +1,29 @@
+<section
+  id="clean-mode-root"
+  class="mx-auto flex w-full max-w-lg flex-1 flex-col justify-center px-4 py-8 sm:py-10"
+  aria-labelledby="clean-mode-title"
+  hidden
+>
+  <h1 id="clean-mode-title" class="text-center text-xl font-semibold text-slate-900" data-i18n-key="cleanMode.title">Buscar y pagar</h1>
+  <p class="mt-2 text-center text-sm text-slate-600" data-i18n-key="cleanMode.lead">Vista minimalista: introduce referencia o consulta rápida.</p>
+  <label class="mt-8 block">
+    <span class="mb-2 block text-sm font-medium text-slate-700" data-i18n-key="cleanMode.fieldLabel">Referencia o concepto</span>
+    <input
+      id="clean-mode-query"
+      type="search"
+      name="clean-query"
+      autocomplete="off"
+      class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 shadow-sm ring-1 ring-slate-900/5 placeholder:text-slate-400 focus:border-[color:var(--brand-primary)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-primary)]/25"
+      data-i18n-key="cleanMode.placeholder"
+      data-i18n-attr="placeholder"
+      placeholder="Referencia o concepto"
+    />
+  </label>
+  <div
+    class="mt-6 min-h-[12rem] rounded-2xl border border-dashed border-slate-200 bg-slate-50/80 p-4 text-sm text-slate-600"
+    role="log"
+    aria-live="polite"
+    data-clean-messages
+    data-i18n-key="cleanMode.empty"
+  ></div>
+</section>

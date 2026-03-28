@@ -30,13 +30,14 @@
         </button>
       </div>
     </div>
-    <div id="cms-banners" class="mt-8" data-cms-slot="banner-list">
+    <div id="cms-banners" class="mt-8" data-cms-slot="banner-list" data-banner-root>
       <div
         class="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/80 shadow-sm backdrop-blur"
         data-carousel="banners"
+        data-banner-carousel
         aria-roledescription="carrusel"
       >
-        <div id="banner-carousel-slides" class="flex transition-transform duration-500 ease-out will-change-transform" data-carousel-track style="transform: translateX(0)">
+        <div id="banner-carousel-slides" class="flex transition-transform duration-500 ease-out will-change-transform motion-reduce:transition-none" data-carousel-track style="transform: translateX(0)">
           <article class="min-w-full px-6 py-8 sm:px-10" data-carousel-slide data-reveal>
             <p class="text-sm font-medium text-teal-700" data-i18n-key="banners.slide1.tag">Para comercios</p>
             <h3 class="mt-2 text-xl font-semibold text-slate-900" data-i18n-key="banners.slide1.title">Menos fricción en cada cobro</h3>

@@ -44,3 +44,21 @@
 [data-brand-surface] {
   background-color: color-mix(in srgb, var(--brand-surface) 92%, white);
 }
+
+/* Modo limpio (Fase 5): oculta landing completa y reduce animaciones */
+body.clean-mode {
+  background-color: var(--brand-surface);
+}
+
+body.clean-mode [data-reveal] {
+  @apply translate-y-0 opacity-100 transition-none;
+}
+
+#clean-mode-root:not([hidden]) {
+  display: flex;
+}
+
+body.clean-mode #clean-mode-mount:not(.hidden) {
+  display: flex;
+  flex-direction: column;
+}

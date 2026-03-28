@@ -17,7 +17,9 @@
     "faq": "FAQ",
     "ctaPay": "Pay",
     "langLabel": "Language",
-    "langSelectAria": "Choose site language"
+    "langSelectAria": "Choose site language",
+    "cleanMode": "Clean mode",
+    "cleanModeExit": "Exit clean mode"
   },
   "hero": {
     "eyebrow": "Trusted collections",
@@ -108,6 +110,21 @@
       "name": "Sofía V.",
       "role": "Food & beverage · Cali"
     }
+  },
+  "cleanMode": {
+    "headerAria": "Clean mode toolbar",
+    "openChat": "Open chat",
+    "title": "Search and pay",
+    "lead": "Minimal view: enter a reference or quick lookup.",
+    "fieldLabel": "Reference or concept",
+    "placeholder": "e.g. payment reference or concept",
+    "empty": "Assistant messages will appear here."
+  },
+  "chat": {
+    "title": "Assistant",
+    "stub": "In this demo environment, chat is a static preview.",
+    "close": "Close",
+    "open": "Open chat assistant"
   },
   "faq": {
     "title": "Frequently asked questions",
